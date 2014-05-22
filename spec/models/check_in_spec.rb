@@ -29,7 +29,7 @@ describe CheckIn do
 
     context 'and the user tries to check in to a different business within the hour' do
       it "should pass validation" do
-        expect(build :check_in, business: "Parliament").to be_valid
+        expect(build :check_in, business: 'Parliament').to be_valid
       end
     end
   end
