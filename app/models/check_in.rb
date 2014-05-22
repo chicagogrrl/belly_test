@@ -5,7 +5,7 @@ class CheckIn < ActiveRecord::Base
   validate :minimum_time_constraint
 
   def user_last_check_in
-    CheckIn.where( user: self.user ).last
+    CheckIn.where( user: self.user, business: self.business ).last
   end
 
   def minimum_time_constraint
