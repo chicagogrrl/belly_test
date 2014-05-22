@@ -8,8 +8,10 @@ class CheckInsApi < Grape::API
     represent check_ins, with: CheckInRepresenter
   end
 
-  desc 'Create an check_in'
+  desc 'Create a check_in'
   params do
+    optional :user, type: String, desc: 'id of the user checking in'
+    optional :business, type: String, desc: 'id of the business checked into'
   end
 
   post do
@@ -30,6 +32,8 @@ class CheckInsApi < Grape::API
 
     desc 'Update an check_in'
     params do
+      optional :user, type: String, desc: 'id of the user checking in'
+      optional :business, type: String, desc: 'id of the business checked into'
     end
     put do
       # fetch check_in record and update attributes.  exceptions caught in app.rb
